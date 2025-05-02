@@ -7,9 +7,16 @@ plugins {
 
 android {
     namespace = "narek.dallakyan.dragging"
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+        }
+    }
+
     publishing {
         singleVariant("release") {
-            withSourcesJar()
+
         }
     }
 }
@@ -32,7 +39,7 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "com.github.narek-dallakyan"
+                groupId = "com.github.ItNarekDallakyan"
                 artifactId = "android-dragging-compose"
                 version = "1.0.0"
             }
