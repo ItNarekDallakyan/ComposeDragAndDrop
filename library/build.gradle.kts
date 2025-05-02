@@ -31,30 +31,26 @@ dependencies {
     implementation(libs.androidx.lifecycle.compose)
 }
 
-
 afterEvaluate {
-
     publishing {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-
                 groupId = "com.github.narek.dallakyan"
                 artifactId = "android-dragging-compose"
                 version = "1.0.0"
             }
         }
     }
+
+    signing {
+        isRequired = false
+        // REMOVE this line below
+        // sign(publishing.publications.findByName("release") ?: return@signing)
+    }
+
+    tasks.withType<Sign>().configureEach {
+        enabled = false
+    }
 }
 
-signing {
-    isRequired = false
-}
-
-tasks.withType<Sign>().configureEach {
-    onlyIf { false } // Completely disable all signing tasks
-}
-
-tasks.withType<Sign>().configureEach {
-    enabled = false
-}
