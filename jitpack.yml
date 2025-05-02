@@ -1,7 +1,0 @@
-jdk:
-  - openjdk17
-
-install:
-  # Skip the default Gradle publishing command that JitPack uses
-  - echo "Running custom install command"
-  - ./gradlew clean -Pgroup=com.github.ItNarekDallakyan build publishToMavenLocal -x signMavenPublication
