@@ -27,6 +27,10 @@ dependencies {
 }
 
 afterEvaluate {
+    // Disable signing for mavenLocal or if no signing credentials are provided
+    val signingExtension = extensions.findByType<SigningExtension>()
+    signingExtension?.isRequired = false
+
     publishing {
         publications {
             create<MavenPublication>("release") {
@@ -35,16 +39,6 @@ afterEvaluate {
                 groupId = "com.github.narek.dallakyan"
                 artifactId = "android-dragging-compose"
                 version = "1.0.0"
-            }
-        }
-    }
-    // Disable signing if keys are not provided
-    if (!project.hasProperty("signing.keyId")) {
-        tasks.withType<PublishToMavenLocal>().configureEach {
-            doFirst {
-                project.extensions.findByType(org.gradle.plugins.signing.SigningExtension::class.java)?.apply {
-                    isRequired = false
-                }
             }
         }
     }
