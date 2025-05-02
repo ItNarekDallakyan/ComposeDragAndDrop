@@ -9,13 +9,6 @@ plugins {
 
 android {
     namespace = "narek.dallakyan.dragging"
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
 
 dependencies {
@@ -45,8 +38,6 @@ afterEvaluate {
 
     signing {
         isRequired = false
-        // REMOVE this line below
-        // sign(publishing.publications.findByName("release") ?: return@signing)
     }
 
     tasks.withType<Sign>().configureEach {
