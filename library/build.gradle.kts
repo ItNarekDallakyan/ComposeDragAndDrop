@@ -10,9 +10,11 @@ plugins {
 android {
     namespace = "narek.dallakyan.dragging"
 
-
     publishing {
-        singleVariant("release") {}
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 }
 
@@ -34,7 +36,7 @@ afterEvaluate {
 
     publishing {
         publications {
-            create<MavenPublication>("maven") {
+            create<MavenPublication>("release") {
                 from(components["release"])
 
                 groupId = "com.github.narek.dallakyan"
@@ -51,5 +53,8 @@ signing {
 
 tasks.withType<Sign>().configureEach {
     onlyIf { false } // Completely disable all signing tasks
+}
+
+tasks.withType<Sign>().configureEach {
     enabled = false
 }
