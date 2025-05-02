@@ -10,6 +10,36 @@ android {
     namespace = "narek.dallakyan.dragging"
 }
 
+mavenPublishing {
+    coordinates(
+        groupId = "io.github.ItNarekDallakyan",
+        artifactId = "composedraganddrop",
+        version = "1.0.0"
+    )
+
+    pom {
+        name.set("ComposeDragAndDrop")
+        description.set("A lightweight and customizable Jetpack Compose library for drag-and-drop functionality")
+        url.set("https://github.com/ItNarekDallakyan/ComposeDragAndDrop")
+        licenses {
+            license {
+                name.set("Apache License, Version 2.0")
+                url.set("https://www.apache.org/licenses/LICENSE-2.0")
+            }
+        }
+        developers {
+            developer {
+                id.set("ItNarekDallakyan")
+                name.set("Narek Harutyunyan")
+                email.set("it.narek.dallakyan@gmail.com")
+            }
+        }
+        scm {
+            url.set("https://github.com/ItNarekDallakyan/ComposeDragAndDrop")
+        }
+    }
+}
+
 dependencies {
     implementation(libs.compose.ui)
     implementation(libs.androidx.lifecycle.runtime)
