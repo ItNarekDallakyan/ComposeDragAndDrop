@@ -26,4 +26,5 @@ dependencies {
     implementation(libs.plgn.android.library)
     implementation(libs.plgn.kotlin.compose.compiler)
     implementation(libs.plgn.kotlin)
+    implementation(libs.gradle.tools)
 }

@@ -5,6 +5,7 @@ vanniktech-publish = "0.31.0"
 agp = "8.9.1"
 minSdk = "21"
 targetSdk = "35"
+gradle = "8.2.2"
 compileSdk = "android-35"
 
 activity = "1.10.1"
@@ -57,6 +58,7 @@ espresso-contrib = { group = "androidx.test.espresso", name = "espresso-contrib"
 plgn-android-application = { module = "com.android.application:com.android.application.gradle.plugin", version.ref = "agp" }
 plgn-android-library = { module = "com.android.library:com.android.library.gradle.plugin", version.ref = "agp" }
 plgn-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradle-tools = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 plgn-kotlin-compose-compiler = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 
 [plugins]
