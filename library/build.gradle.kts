@@ -38,4 +38,14 @@ afterEvaluate {
             }
         }
     }
+    // Disable signing if keys are not provided
+    if (!project.hasProperty("signing.keyId")) {
+        tasks.withType<PublishToMavenLocal>().configureEach {
+            doFirst {
+                project.extensions.findByType(org.gradle.plugins.signing.SigningExtension::class.java)?.apply {
+                    isRequired = false
+                }
+            }
+        }
+    }
 }
