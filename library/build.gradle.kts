@@ -40,7 +40,7 @@ afterEvaluate {
             create<MavenPublication>("maven") {
                 from(components["release"])
                 groupId = "com.github.ItNarekDallakyan"
-                artifactId = "android-dragging-compose"
+                artifactId = "ComposeDragAndDrop"
                 version = "1.0.0"
             }
         }
