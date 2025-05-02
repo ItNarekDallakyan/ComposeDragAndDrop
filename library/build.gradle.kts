@@ -2,12 +2,15 @@ plugins {
     id("plugins.android.library")
     id("plugins.dokka")
     id("maven-publish")
+    id("signing")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "narek.dallakyan.dragging"
+
+
     publishing {
         singleVariant("release") {}
     }
@@ -26,10 +29,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.compose)
 }
 
+
 afterEvaluate {
-    // Disable signing for mavenLocal or if no signing credentials are provided
-    val signingExtension = extensions.findByType<SigningExtension>()
-    signingExtension?.isRequired = false
 
     publishing {
         publications {
@@ -43,3 +44,9 @@ afterEvaluate {
         }
     }
 }
+
+signing {
+    isRequired = false
+}
+
+
