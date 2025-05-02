@@ -34,14 +34,31 @@ dependencies {
     implementation(libs.androidx.lifecycle.compose)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("maven") {
-                from(components["release"])
-                groupId = "com.github.ItNarekDallakyan"
-                artifactId = "ComposeDragAndDrop"
-                version = "1.0.0"
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.ItNarekDallakyan"
+            artifactId = "ComposeDragAndDrop"
+            version = "1.0.0"
+
+            // Optionally, configure POM metadata if needed
+            pom {
+                name.set("ComposeDragAndDrop")
+                description.set("A library for drag and drop in Compose.")
+                url.set("https://github.com/ItNarekDallakyan/ComposeDragAndDrop")
+                licenses {
+                    license {
+                        name.set("MIT License")
+                        url.set("https://opensource.org/licenses/MIT")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("narek")
+                        name.set("Narek Dallakyan")
+                        email.set("it.narek.dallakyan@gmail.com")
+                    }
+                }
             }
         }
     }
