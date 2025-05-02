@@ -31,9 +31,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.compose)
 }
 
-
 afterEvaluate {
-
     publishing {
         publications {
             create<MavenPublication>("release") {
@@ -45,16 +43,15 @@ afterEvaluate {
             }
         }
     }
-}
 
-signing {
-    isRequired = false
-}
+    signing {
+        isRequired = false
+        // Do not sign anything
+        sign(publishing.publications.findByName("release") ?: return@signing)
+    }
 
-tasks.withType<Sign>().configureEach {
-    onlyIf { false } // Completely disable all signing tasks
-}
-
-tasks.withType<Sign>().configureEach {
-    enabled = false
+    // Disable all sign tasks explicitly
+    tasks.withType<Sign>().configureEach {
+        enabled = false
+    }
 }
