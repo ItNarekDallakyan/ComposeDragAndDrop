@@ -8,6 +8,9 @@ plugins {
 android {
     namespace = "narek.dallakyan.dragging"
     compileSdk = 35
+    defaultConfig {
+        minSdk = 21
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
