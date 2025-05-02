@@ -1,7 +1,6 @@
 plugins {
     id("plugins.android.library")
     id("maven-publish")
-    id("signing")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
@@ -9,7 +8,9 @@ plugins {
 android {
     namespace = "narek.dallakyan.dragging"
     publishing {
-        singleVariant("release")
+        singleVariant("release") {
+            withSourcesJar()
+        }
     }
 }
 
@@ -31,25 +32,10 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-
-                groupId = "com.github.narek.dallakyan"
+                groupId = "com.github.narek-dallakyan"
                 artifactId = "android-dragging-compose"
                 version = "1.0.0"
             }
         }
-    }
-
-    // Disable signing tasks to avoid issues with JitPack
-    tasks.withType<Sign>().configureEach {
-        enabled = false
-    }
-
-    // Disable signing at configuration phase
-    tasks.withType<Sign>().configureEach {
-        onlyIf { false } // This disables the signing completely
-    }
-
-    signing {
-        isRequired = false
     }
 }
