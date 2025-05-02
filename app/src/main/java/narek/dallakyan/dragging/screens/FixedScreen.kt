@@ -14,7 +14,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import narek.dallakyan.dragging.component.DraggableItem
 import narek.dallakyan.dragging.component.ItemCard
 import narek.dallakyan.dragging.extention.draggable
-import narek.dallakyan.dragging.model.ItemModel
 import narek.dallakyan.dragging.model.MenuItemModel
 import narek.dallakyan.dragging.state.rememberRecordableLazyListState
 import narek.dallakyan.dragging.viewmodel.FixedViewModel
