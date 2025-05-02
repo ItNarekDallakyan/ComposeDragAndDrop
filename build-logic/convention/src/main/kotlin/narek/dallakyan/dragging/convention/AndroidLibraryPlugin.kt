@@ -13,7 +13,6 @@ class AndroidLibraryPlugin : Plugin<Project> {
         with(pluginManager) {
             apply(libs.findPlugin("android-library"))
             apply(libs.findPlugin("kotlin-android"))
-            apply(libs.findPlugin("kotlin-dokka"))
         }
 
         with(extensions.getByType<LibraryExtension>()) {

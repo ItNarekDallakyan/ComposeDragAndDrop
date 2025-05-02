@@ -1,6 +1,5 @@
 plugins {
     id("plugins.android.library")
-    id("plugins.dokka")
     id("maven-publish")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
