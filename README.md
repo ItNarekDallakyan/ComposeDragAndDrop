@@ -281,9 +281,9 @@ ComposeDragAndDrop is available under the Apache License, Version 2.0. See the [
 
 ## 👨‍💻 Author
 
-**Narek Harutyunyan** - Senior Android Engineer
+**Narek Dallakyan** - Senior Android Engineer
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/arayik-harutyunyan/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/narekdallakyan/)
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/ItNarekDallakyan)
 
 ---
