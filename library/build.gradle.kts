@@ -42,4 +42,9 @@ afterEvaluate {
     tasks.withType<Sign>().configureEach {
         enabled = false
     }
+
+    // Disable signing at configuration phase
+    tasks.withType<Sign>().configureEach {
+        onlyIf { false } // This disables the signing completely
+    }
 }
