@@ -1,5 +1,14 @@
 jdk:
   - openjdk17
 
-before_install:
-  - ./scripts/prepareJitpackEnvironment.sh
+env:
+  - GRADLE_OPTS="-Dorg.gradle.daemon=false -Dorg.gradle.caching=false"
+
+install:
+  - echo "Disabling signing for JitPack builds"
+  - echo "mavenCentralUsername=jitpack" >> gradle.properties
+  - echo "mavenCentralPassword=jitpack" >> gradle.properties
+  - echo "signing.gnupg.keyName=1234567890ABCDEF" >> gradle.properties
+  - echo "signing.gnupg.passphrase=jitpack" >> gradle.properties
+  - echo "signing.enabled=false" >> gradle.properties
+  - ./gradlew build publishToMavenLocal -xsignMavenPublication
