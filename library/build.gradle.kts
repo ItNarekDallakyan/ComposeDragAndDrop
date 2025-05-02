@@ -43,10 +43,13 @@ afterEvaluate {
             }
         }
     }
-
-    signing {
-        isRequired = false
-    }
 }
 
+signing {
+    isRequired = false
+}
 
+tasks.withType<Sign>().configureEach {
+    onlyIf { false } // Completely disable all signing tasks
+    enabled = false
+}
