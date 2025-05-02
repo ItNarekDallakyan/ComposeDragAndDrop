@@ -1,6 +1,7 @@
 plugins {
     id("plugins.android.library")
     id("maven-publish")
+    id("signing")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
@@ -46,5 +47,9 @@ afterEvaluate {
     // Disable signing at configuration phase
     tasks.withType<Sign>().configureEach {
         onlyIf { false } // This disables the signing completely
+    }
+
+    signing {
+        isRequired = false
     }
 }
