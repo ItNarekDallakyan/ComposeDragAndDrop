@@ -11,7 +11,7 @@ import narek.dallakyan.dragging.state.DraggableState
 
 fun Modifier.draggable(
     state: DraggableState<*>,
-) = then(Modifier.pointerInput(true) {
+) = then(Modifier.pointerInput(Unit) {
     forEachGesture {
         val dragStart = state.interactions.receive()
         val down = awaitPointerEventScope {
@@ -41,7 +41,7 @@ fun Modifier.draggable(
         }
     }
 }).then(
-    pointerInput(true) {
+    Modifier.pointerInput(true) {
         forEachGesture {
             val down = awaitPointerEventScope {
                 awaitFirstDown(requireUnconsumed = false)
