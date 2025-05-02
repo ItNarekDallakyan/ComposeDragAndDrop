@@ -11,8 +11,8 @@ import org.gradle.plugin.use.PluginDependency
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.util.Optional
 
-val JDK_VERSION = JavaVersion.VERSION_17
-val JVM_TARGET = JvmTarget.JVM_17
+val JDK_VERSION = JavaVersion.VERSION_21
+val JVM_TARGET = JvmTarget.JVM_21
 
 val Project.libs: VersionCatalog
     get() = extensions.getByType<VersionCatalogsExtension>().named("libs")
