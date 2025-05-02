@@ -1,5 +1,5 @@
 plugins {
-    id("plugins.android.library")
+    alias(libs.plugins.android.library)
     id("maven-publish")
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
@@ -54,7 +54,7 @@ publishing {
                 }
                 developers {
                     developer {
-                        id.set("narek")
+                        id.set("Narek")
                         name.set("Narek Dallakyan")
                         email.set("it.narek.dallakyan@gmail.com")
                     }
