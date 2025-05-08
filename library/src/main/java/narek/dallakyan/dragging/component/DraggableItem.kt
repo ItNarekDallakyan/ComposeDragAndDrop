@@ -34,7 +34,7 @@ fun LazyItemScope.DraggableItem(
     draggableState,
     key,
     modifier,
-    Modifier.animateItemPlacement(),
+    Modifier.animateItem(),
     orientationLocked,
     index,
     content
