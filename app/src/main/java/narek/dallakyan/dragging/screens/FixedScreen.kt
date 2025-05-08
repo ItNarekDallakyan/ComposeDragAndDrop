@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import narek.dallakyan.dragging.component.DraggableItem
 import narek.dallakyan.dragging.component.ItemCard
-import narek.dallakyan.dragging.extention.draggable
+import narek.dallakyan.dragging.extention.longPressDraggable
 import narek.dallakyan.dragging.model.MenuItemModel
 import narek.dallakyan.dragging.state.rememberRecordableLazyListState
 import narek.dallakyan.dragging.viewmodel.FixedViewModel
@@ -55,8 +55,7 @@ fun VerticalLazyColumn(
     )
 
     LazyColumn(
-        modifier = modifier
-            .then(Modifier.draggable(state = state)),
+        modifier = modifier.longPressDraggable(state = state),
         state = state.listState
     ) {
         item { beforeItemsContent.invoke(this) }
